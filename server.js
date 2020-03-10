@@ -8,7 +8,7 @@ app = express ();
 app.use(serveStatic(__dirname));
 
 app.get('*', function (req, res) {
-    const index = path.join(__dirname, 'build');
+    const index = path.join(__dirname, 'build/index.html');
     console.log(index);
     res.sendFile(index)
 });
