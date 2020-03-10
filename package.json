@@ -22,8 +22,9 @@
   "scripts": {
     "test": "gulp test",
     "gulp":"gulp",
-    "build": "gulp build",
-    "builds": "node server.js"
+    "build-gulp": "gulp build",
+    "build": "node server.js",
+    "start": "node server.js"
   },
   "license": "BSD",
   "devDependencies": {
