@@ -1,0 +1,30 @@
+html, body{
+  padding: 0;
+  margin: 0;
+}
+
+main{
+  height: 100vh;
+  background: #ccc;
+  padding: 50px;
+
+}
+
+h1{
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.box{
+  padding: 50px;
+  height: 100vh;
+
+
+}
+
+video, canvas{
+  position: absolute;
+
+
+
+}

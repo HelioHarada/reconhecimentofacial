@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Imagem view</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <main>
+      <h1 align="center" >reconhecimento facial</h1>
+      <div class="box">
+          <video id="video" src="" width="520"  height="440" preload autoplay loop muted></video>
+          <canvas id="canvas" width="520"  height="440"></canvas>
+      </div>
+    </main>
+
+    <script src="tracking-min.js"></script>
+    <script src="data/face-min.js"> </script>
+    <script>
+      function init(){
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        const tracker = new tracking.ObjectTracker('face')
+
+        tracking.track("#video", tracker, {camera: true})
+        tracker.on('track', event => {
+
+          // const face = event.data[0];
+          // criar retangulo
+          context.clearRect(0,0, canvas.width, canvas.height)
+
+          // for data
+          event.data.forEach(rect =>{
+            context.strokeStyle = 'green'
+            context.lineWidth = '2'
+            context.strokeRect(rect.x, rect.y, rect.width, rect.height)
+            console.log(rect)
+          })
+
+        })
+      }
+
+      window.onliad = init();
+    </script>
+  </body>
+</html>
