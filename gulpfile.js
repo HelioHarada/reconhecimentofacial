@@ -12,6 +12,20 @@ var stylish = require('jshint-stylish');
 var uglify = require('gulp-uglify');
 var esformatter = require('gulp-esformatter');
 var runSequence = require('run-sequence');
+var browserSync = require('browser-sync');
+
+// Static server
+gulp.task('hot-reload', function() {
+  browserSync.init({
+      server: {
+          baseDir: "build/**/*"
+      }
+  });
+  gulp.watch('build/**/*').on('change', function(){
+    browserSync.reload();
+})
+});
+
 
 gulp.task('all', ['clean'], function() {
   return runSequence(['build', 'build-data']);

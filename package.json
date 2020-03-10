@@ -21,11 +21,14 @@
   },
   "scripts": {
     "test": "gulp test",
+    "gulp" : "gulp",
     "start": "node server.js"
   },
   "license": "BSD",
   "devDependencies": {
-    "gulp": "^3.9.0",
+    "browser-sync": "^2.26.7",
+    "dat.gui": "^0.6.1",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-esformatter": "^5.0.0",
     "gulp-header": "^1.7.1",
@@ -39,8 +42,7 @@
     "jshint-stylish": "^2.1.0",
     "nodeunit": "^0.9.1",
     "png-js": "^0.1.1",
-    "run-sequence": "^1.1.5",
-    "dat.gui": "^0.6.1"
+    "run-sequence": "^1.1.5"
   },
   "dependencies": {
     "express": "^4.17.1",
